@@ -1,0 +1,23 @@
+{
+  "name": "style",
+  "version": "1.0.0",
+  "description": "Adopt-a-Tree is an initiative by Carved Rock Fitness to adopt trees from various afforestation projects across the world.",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass assets/scss/styles.scss assets/css/styles.css && node-sass assets/scss/style-guide.scss assets/css/style-guide.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tankicag/creating-living-style-guide-sass-vanilla-javascript.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tankicag/creating-living-style-guide-sass-vanilla-javascript/issues"
+  },
+  "homepage": "https://github.com/tankicag/creating-living-style-guide-sass-vanilla-javascript#readme",
+  "devDependencies": {
+    "node-sass": "^5.0.0",
+    "sass": "^1.30.0"
+  }
+}
