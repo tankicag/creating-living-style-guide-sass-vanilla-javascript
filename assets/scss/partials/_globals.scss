@@ -3,6 +3,48 @@
 
 
 // ---------------------------------------------
+// GLOBALS: RESPONSIVE IMAGES, HTML5 VIDEOS, SVGS
+
+img, video, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+// Hack for old Android devices to calculate height correctly
+svg {
+  max-height: 100%;
+}
+
+
+// ---------------------------------------------
+// GLOBALS: FULL WIDTH
+// Use for images, HTML5 videos and any element which needs to fill up its parent's width
+
+.full-width {
+  display: block;
+  width: 100%;
+}
+
+
+// ---------------------------------------------
+// GLOBALS: PADDING: RESET
+// Resets padding on all sides
+
+.padding-reset {
+  padding: 0 !important;
+}
+
+
+// ---------------------------------------------
+// GLOBALS: MARGINS: RESET
+// Resets margins on all sides
+
+.margin-reset {
+  margin: 0 !important;
+}
+
+
+// ---------------------------------------------
 // GLOBALS: ALIGNMENT: CENTER: HORIZONTAL (USES AUTO MARGINS)
 // Use for horizontally centering elements
 // Adds a block display so auto margins also work on inline and inline-block elements
@@ -71,6 +113,26 @@
 
 
 // ---------------------------------------------
+// GLOBALS: BORDER RADIUS
+// Generates classes for border-radius on all sides
+// E.g., border-radius, border-radius-lg, border-radius-xl 
+
+// Sass Map to store border radius values
+$border-radius-map: (
+  "border-radius": $border-radius,
+  "border-radius-lg": $border-radius-lg,
+  "border-radius-xl": $border-radius-xl
+);
+
+// @each Sass loop to generate classes
+@each $name, $value in $border-radius-map {
+  .#{$name} {
+    border-radius: $value;
+  }
+}
+
+
+// ---------------------------------------------
 // GLOBALS: ICONS
 
 // Icons: Sizes
@@ -132,4 +194,22 @@
 
 .icon-right-lg {
   @include icon-right-lg;
+}
+
+
+// ---------------------------------------------
+// GLOBALS: SCREEN READERS
+// Screen readers: Show content only on screen readers: Mixin
+@mixin show-on-screen-readers {
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px); /* Fallback: Older Browsers */
+  clip-path: polygon(0px 0px, 0px 0px,0px 0px, 0px 0px);
+  white-space: nowrap;
+}
+
+.show-on-screen-readers {
+  @include show-on-screen-readers;
 }

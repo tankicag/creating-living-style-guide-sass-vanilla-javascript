@@ -26,7 +26,11 @@ $colors-map: (
   "gray-mist": $gray-mist,
   "white": $white,
   "color-font": $color-font,
-  "color-link": $color-link
+  "color-link": $color-link,
+  "color-error": $color-error,
+  "color-success": $color-success,
+  "color-info": $color-info,
+  "color-disabled": $color-disabled
 );
 
 // @each Sass loop to generate classes
